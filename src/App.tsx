@@ -5,7 +5,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <div className="bg-[#222831] h-screen w-screen">
+      <div className="bg-[#222831] h-screen">
         <div>
           <HeroBanner />
         </div>

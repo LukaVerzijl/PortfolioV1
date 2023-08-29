@@ -13,7 +13,7 @@ const Aboutme = () => {
         headers: { Authorization: `Bearer ${STRAPIKEY}` },
       })
       .then((res) => {
-        setAboutMeInfo(res.data); // Assuming the data you want is in res.data
+        setAboutMeInfo(res.data.data.attributes.AboutText);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
@@ -23,7 +23,9 @@ const Aboutme = () => {
   return (
     <div>
       {aboutmeinfo ? (
-        <div>{/* Render your aboutmeinfo data here */}</div>
+        <div>
+          <p className="text-white">{aboutmeinfo}</p>
+        </div>
       ) : (
         <p>Loading...</p>
       )}

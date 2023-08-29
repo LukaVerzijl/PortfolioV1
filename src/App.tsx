@@ -9,6 +9,8 @@ function App() {
       <div className="bg-[#222831] h-screen">
         <div>
           <HeroBanner />
+        </div>
+        <div className=" mt-44">
           <Aboutme />
         </div>
       </div>

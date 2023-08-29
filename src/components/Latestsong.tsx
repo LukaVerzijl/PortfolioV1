@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
 const LASTFM_API_KEY = import.meta.env.VITE_LASTFMKEY;
 const LASTFM_USERNAME = import.meta.env.VITE_LASTFMUSER;
 
 function Latestsong() {
-  const [lastPlayedSong, setLastPlayedSong] = useState(null);
+  const [lastPlayedSong, setLastPlayedSong] = useState<any>(null); // Use 'any' type for now
 
   useEffect(() => {
     // Make a request to the Last.fm API
@@ -32,7 +32,7 @@ function Latestsong() {
               <div className="w-2 h-2 bg-blue-500 rounded-full mr-2" />
               <a href="https://www.last.fm/user/Redlucraft">
                 <p className="font-poppins text-white text-l">
-                  Last Played Song: {lastPlayedSong.name}{" "}
+                  Last Played Song: {lastPlayedSong.name}, by:{" "}
                   {lastPlayedSong.artist["#text"]}
                 </p>
               </a>

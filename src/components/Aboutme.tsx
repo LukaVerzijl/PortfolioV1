@@ -1,34 +1,19 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
-
-const STRAPIURL = import.meta.env.VITE_STRAPIURL;
-const STRAPIKEY = import.meta.env.VITE_STRAPIKEY;
-
+import { PrismicRichText, useSinglePrismicDocument } from "@prismicio/react";
 const Aboutme = () => {
-  const [aboutmeinfo, setAboutMeInfo] = useState(null);
-
-  useEffect(() => {
-    axios
-      .get(`${STRAPIURL}/api/aboutmes/2`, {
-        headers: { Authorization: `Bearer ${STRAPIKEY}` },
-      })
-      .then((res) => {
-        setAboutMeInfo(res.data.data.attributes.AboutText);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
-  }, []);
+  const [test] = useSinglePrismicDocument("test");
 
   return (
-    <div>
-      {aboutmeinfo ? (
-        <div>
-          <p className="text-white">{aboutmeinfo}</p>
-        </div>
-      ) : (
-        <p>Loading...</p>
-      )}
+    <div className="w-full flex justify-evenly flex-row lg:mt-32 sm:mt-10 items-center">
+      <div>
+        <div></div>
+      </div>
+
+      <div className="flex text-white ">
+        <h1>About me </h1> {"\n"}
+        <section>
+          <PrismicRichText field={test?.data.test} />
+        </section>
+      </div>
     </div>
   );
 };

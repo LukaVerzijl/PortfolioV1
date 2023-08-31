@@ -2,14 +2,14 @@ import Lottie from "lottie-react";
 import Latestsong from "./Latestsong";
 import { motion } from "framer-motion";
 import heroanimation from "../assets/heroanimation.json";
-import Mainbutton from "./Mainbutton";
+import Mainbutton from "./MainButton";
 const HeroBanner = () => {
   return (
     <div className="w-full flex justify-evenly flex-row lg:mt-32 sm:mt-10 items-center">
       <div>
         <div>
           <motion.h1 className="text-8xl text-white font-poppins">
-            Welkom
+            Hi!
           </motion.h1>
           <motion.h1 className="text-8xl text-white font-poppins">
             Ik ben{" "}
@@ -24,7 +24,10 @@ const HeroBanner = () => {
         </div>
       </div>
       <div className="flex">
-        <Lottie animationData={heroanimation} />
+        <Lottie
+          animationData={heroanimation}
+          style={{ height: "500px", width: "500px" }}
+        />
       </div>
     </div>
   );

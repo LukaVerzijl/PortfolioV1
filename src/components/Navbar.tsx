@@ -2,7 +2,7 @@ import NavButton from "./NavButton";
 
 function Navbar() {
   return (
-    <div className=" h-14 bg-[#222831] ">
+    <div className=" h-14 bg-[#222831] relative ">
       <div className="flex justify-between items-center">
         <div className=" flex items-center ml-6 mt-2">
           <NavButton text="Home" />

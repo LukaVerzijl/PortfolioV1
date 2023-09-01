@@ -4,31 +4,21 @@ import HeroBanner from "./components/HeroBanner";
 import Navbar from "./components/Navbar";
 import Spline from "@splinetool/react-spline";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/all";
 function App() {
   const model = useRef(null);
+  gsap.registerPlugin(ScrollTrigger);
   let rotateModel: any;
   function onLoad(spline: { findObjectByName: (arg0: string) => any }) {
     const obj = spline.findObjectByName("letters");
-    // or
-    // const obj = spline.findObjectById('8E8C2DDD-18B6-4C54-861D-7ED2519DE20E');
-
-    // save it in a ref for later use
     model.current = obj;
     if (model.current) {
       gsap.set(model.current["position"], {
         x: 250,
-        y: 50,
+        y: 75,
       });
       gsap.set(model.current["scale"], { x: 1.3, y: 1.3, z: 1.3 });
-      // gsap.set(model.current["rotation"], { x: 100, y: 100, z: 100 });
-      rotateModel = gsap.to(model.current.rotation, {
-        y: Math.PI * 2 + model.current.rotation.y,
-        x: 0,
-        z: 0,
-        duration: 10,
-        repeat: -1,
-        ease: "none",
-      });
+      gsap.set(model.current["rotation"], { x: 100, y: 100, z: 100 });
     }
   }
 
@@ -46,7 +36,7 @@ function App() {
           <HeroBanner />
           <div> </div>
         </div>
-        <div className=" mt-44">
+        <div className=" mt-44 relative">
           <Aboutme />
         </div>
       </div>

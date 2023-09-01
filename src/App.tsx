@@ -6,7 +6,7 @@ import Spline from "@splinetool/react-spline";
 import { gsap } from "gsap";
 function App() {
   const model = useRef(null);
-
+  let rotateModel: any;
   function onLoad(spline: { findObjectByName: (arg0: string) => any }) {
     const obj = spline.findObjectByName("letters");
     // or
@@ -16,13 +16,22 @@ function App() {
     model.current = obj;
     if (model.current) {
       gsap.set(model.current["position"], {
-        x: 300,
-        y: 100,
+        x: 250,
+        y: 50,
       });
-      gsap.set(model.current["scale"], { x: 1, y: 1, z: 1 });
-      gsap.set(model.current["rotation"], { x: 100, y: 100, z: 100 });
+      gsap.set(model.current["scale"], { x: 1.3, y: 1.3, z: 1.3 });
+      // gsap.set(model.current["rotation"], { x: 100, y: 100, z: 100 });
+      rotateModel = gsap.to(model.current.rotation, {
+        y: Math.PI * 2 + model.current.rotation.y,
+        x: 0,
+        z: 0,
+        duration: 10,
+        repeat: -1,
+        ease: "none",
+      });
     }
   }
+
   return (
     <>
       <Navbar />

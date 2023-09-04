@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Spline from "@splinetool/react-spline";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import Projects from "./components/Projects";
 function App() {
   const model = useRef(null);
   gsap.registerPlugin(ScrollTrigger);
@@ -26,18 +27,21 @@ function App() {
     <>
       <Navbar />
 
-      <div className="bg-[#222831] h-screen">
-        <Spline
+      <div className="bg-[#222831] h-full">
+        {/* <Spline
           scene="https://prod.spline.design/tyETQWHbb8NLplaa/scene.splinecode"
           onLoad={onLoad}
           className="fixed top-0 left-0 w-full h-full" //niet zichtbaar bij sm device
-        />
+        /> */}
         <div className="w-full flex justify-around flex-row lg:mt-32 sm:mt-10 relative ">
           <HeroBanner />
           <div> </div>
         </div>
-        <div className=" mt-44 relative">
+        <div className=" mt-[350px] relative mb-[300px]">
           <Aboutme />
+        </div>
+        <div className="bg-[#222831]">
+          <Projects />
         </div>
       </div>
     </>

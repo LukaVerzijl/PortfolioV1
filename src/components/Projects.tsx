@@ -1,35 +1,27 @@
-import {
-  PrismicRichText,
-  PrismicText,
-  useAllPrismicDocumentsByType,
-} from "@prismicio/react";
-import { motion } from "framer-motion";
-import { useState } from "react";
-import "reactjs-popup/dist/index.css";
+import { useAllPrismicDocumentsByType } from "@prismicio/react";
+
+import ProjectCard from "./ProjectCard";
 const Projects = () => {
   const [ProjectList] = useAllPrismicDocumentsByType("projects");
-  const [modalOpen, setModalOpen] = useState(false);
-
-  const close = () => setModalOpen(false);
-  const open = () => setModalOpen(true);
-  const onClick = () => {};
   return (
     <div className="h-[300px] text-white relative">
       <div>
         <h1 className="text-5xl font-poppins text-center">Projects</h1>
 
-        <div className=" mt-32 mb-44 text-center justify-evenly flex-row flex  ">
-          {ProjectList?.map((project) => (
-            <div key={project?.data.uid}>
-              <div
-                className=" h-44 w-60 flex items-center justify-center"
-                style={{ backgroundImage: `url(${project?.data.image})` }}
-              >
-                <PrismicText field={project?.data.title} />
-              </div>
-              <motion.div onClick={onClick}></motion.div>
-            </div>
-          ))}
+        <div className=" mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-1">
+          {ProjectList &&
+            ProjectList?.map((project, index) => {
+              console.log(project);
+              return (
+                <ProjectCard
+                  key={index}
+                  title={project.data.title[0].text}
+                  image={project.data.image.url}
+                  link={project.data.link.url}
+                  description={project.data.description[0].text}
+                />
+              );
+            })}
         </div>
       </div>
     </div>

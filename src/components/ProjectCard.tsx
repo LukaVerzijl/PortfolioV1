@@ -4,7 +4,7 @@ interface ProjectCardProps {
   link: string;
   description: string;
 }
-
+import { motion } from "framer-motion";
 export default function ProjectCard({
   image,
   title,
@@ -13,9 +13,13 @@ export default function ProjectCard({
 }: ProjectCardProps) {
   return (
     <a href={link}>
-      <div
+      <motion.div
         className="relative mb-8  mx-5 rounded-xl bg-cover bg-center h-[55vw] lg:h-[20vw] "
         style={{ backgroundImage: `url(${image})` }}
+        whileHover={{ scale: 1.02 }}
+        initial={{ opacity: 0, scale: 0.7 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
       >
         <div className="absolute rounded-xl inset-0 bg-black opacity-40"></div>
         <div className=" absolute inset-0 flex items-center justify-center">
@@ -24,7 +28,7 @@ export default function ProjectCard({
             <p className="text-l font-poppins mt-5">{description}</p>
           </div>
         </div>
-      </div>
+      </motion.div>
     </a>
   );
 }

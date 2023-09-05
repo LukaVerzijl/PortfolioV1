@@ -1,9 +1,15 @@
 import { PrismicRichText, useSinglePrismicDocument } from "@prismicio/react";
+import { motion } from "framer-motion";
 const Aboutme = () => {
   const [AboutMe] = useSinglePrismicDocument("aboutme2");
 
   return (
-    <div className="w-full flex lg:mt-64 sm:mt-10 items-center justify-end">
+    <motion.div
+      className="w-full flex lg:mt-64 sm:mt-10 items-center justify-end"
+      initial={{ opacity: 0, scale: 0.9 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ delay: 0.5, duration: 1.5, ease: "easeOut" }}
+    >
       <div></div>
 
       <div className="flex flex-col text-white lg:mr-[450px] ">
@@ -12,7 +18,7 @@ const Aboutme = () => {
           <PrismicRichText field={AboutMe?.data.text} />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

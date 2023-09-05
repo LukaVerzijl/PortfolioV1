@@ -6,7 +6,6 @@ import Spline from "@splinetool/react-spline";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import Projects from "./components/Projects";
-import Footer from "./components/Footer";
 function App() {
   const model = useRef(null);
   gsap.registerPlugin(ScrollTrigger);
@@ -23,7 +22,7 @@ function App() {
       gsap.set(model.current["rotation"], { x: 100, y: 100, z: 100 });
 
       gsap.to(model.current["position"], {
-        ease: " easeInOut",
+        ease: "power4.inOut",
         scrollTrigger: {
           trigger: "#trigger-1",
           start: "top top",
@@ -35,7 +34,7 @@ function App() {
         duration: 1,
       });
       gsap.to(model.current["rotation"], {
-        ease: " easeInOut",
+        ease: "power4.inOut",
         scrollTrigger: {
           trigger: "#trigger-1",
           start: "top top",
@@ -57,7 +56,7 @@ function App() {
         <Spline
           scene="https://prod.spline.design/tyETQWHbb8NLplaa/scene.splinecode"
           onLoad={onLoad}
-          className="absolute top-0 left-0 w-full h-full" //niet zichtbaar bij sm device
+          className="absolute top-0 left-0 w-full h-full sm:hidden lg:block" //niet zichtbaar bij sm device
         />
         <div
           className="w-full flex justify-around flex-row lg:mt-32 sm:mt-10 relative "
@@ -71,9 +70,6 @@ function App() {
         </div>
         <div>
           <Projects />
-        </div>
-        <div>
-          <Footer />
         </div>
       </div>
     </>

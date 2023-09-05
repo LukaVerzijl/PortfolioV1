@@ -16,10 +16,10 @@ export default function ProjectCard({
       <motion.div
         className="relative mb-8  mx-5 rounded-xl bg-cover bg-center h-[55vw] lg:h-[20vw] "
         style={{ backgroundImage: `url(${image})` }}
-        whileHover={{ scale: 1.02 }}
-        initial={{ opacity: 0, scale: 0.7 }}
+        initial={{ opacity: 0, scale: 0.9 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
+        transition={{ duration: 1.3, ease: "easeOut", delay: 0.5 }}
       >
         <div className="absolute rounded-xl inset-0 bg-black opacity-40"></div>
         <div className=" absolute inset-0 flex items-center justify-center">

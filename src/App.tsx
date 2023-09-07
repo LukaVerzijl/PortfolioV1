@@ -1,13 +1,16 @@
-import { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import Aboutme from "./components/Aboutme";
 import HeroBanner from "./components/HeroBanner";
 import Navbar from "./components/Navbar";
 import Spline from "@splinetool/react-spline";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import { LocomotiveScrollProvider } from "react-locomotive-scroll";
 import Projects from "./components/Projects";
 function App() {
   const model = useRef(null);
+  const containerRef = useRef(null);
+
   gsap.registerPlugin(ScrollTrigger);
 
   function onLoad(spline: { findObjectByName: (arg0: string) => any }) {
@@ -50,30 +53,47 @@ function App() {
 
   return (
     <>
-      <Navbar />
-
-      <div className="bg-[#222831] h-full">
-        <Spline
-          scene="https://prod.spline.design/tyETQWHbb8NLplaa/scene.splinecode"
-          onLoad={onLoad}
-          className="absolute top-0 left-0 w-full h-full sm:hidden lg:block" //niet zichtbaar bij sm device
-        />
-        <div
-          className="w-full flex justify-around flex-row lg:mt-32 sm:mt-10 relative "
-          id="trigger-1"
-        >
-          <HeroBanner />
-          <div> </div>
+      <LocomotiveScrollProvider
+        options={{
+          smooth: true,
+          // ... all available Locomotive Scroll instance options
+        }}
+        watch={
+          [
+            //..all the dependencies you want to watch to update the scroll.
+            //  Basicaly, you would want to watch page/location changes
+            //  For exemple, on Next.js you would want to watch properties like `router.asPath` (you may want to add more criterias if the instance should be update on locations with query parameters)
+          ]
+        }
+        containerRef={containerRef}
+      >
+        <div id="smooth-content">
+          <Navbar />
+          <main data-scroll-container ref={containerRef}>
+            <div className="bg-[#222831] h-full">
+              <Spline
+                scene="https://prod.spline.design/tyETQWHbb8NLplaa/scene.splinecode"
+                onLoad={onLoad}
+                className="absolute top-0 left-0 w-full h-full sm:hidden lg:block" //niet zichtbaar bij sm device
+              />
+              <div
+                className="w-full flex justify-around flex-row lg:mt-32 sm:mt-10 relative "
+                id="trigger-1"
+              >
+                <HeroBanner />
+                <div> </div>
+              </div>
+              <div id="trigger-2" className=" mt-[350px] relative mb-[300px]">
+                <Aboutme />
+              </div>
+              <div>
+                <Projects />
+              </div>
+            </div>
+          </main>
         </div>
-        <div id="trigger-2" className=" mt-[350px] relative mb-[300px]">
-          <Aboutme />
-        </div>
-        <div>
-          <Projects />
-        </div>
-      </div>
+      </LocomotiveScrollProvider>
     </>
   );
 }
-
 export default App;

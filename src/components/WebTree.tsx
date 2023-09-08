@@ -16,7 +16,7 @@ const WebTree = () => {
     if (model.current) {
       gsap.set(model.current["position"], {
         x: 400,
-        y: 450,
+        y: 200,
       });
       gsap.set(model.current["scale"], {
         x: 0,
@@ -40,8 +40,8 @@ const WebTree = () => {
           scrub: true,
           markers: false,
         },
-        x: -750,
-        y: -370,
+        x: -650,
+        y: -300,
         duration: 1,
       });
       gsap.to(model.current["rotation"], {

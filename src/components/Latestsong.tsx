@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-
+import { motion } from "framer-motion";
 const LASTFM_API_KEY = import.meta.env.VITE_LASTFMKEY;
 const LASTFM_USERNAME = import.meta.env.VITE_LASTFMUSER;
 
@@ -24,7 +24,11 @@ function Latestsong() {
   }, []);
 
   return (
-    <div className="App">
+    <motion.div
+      transition={{ duration: 1.3, ease: "easeOut", delay: 0.5 }}
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+    >
       <div>
         {lastPlayedSong ? (
           <div>
@@ -42,7 +46,7 @@ function Latestsong() {
           <p className="font-poppins text-white text-l">Loading...</p>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 }
 

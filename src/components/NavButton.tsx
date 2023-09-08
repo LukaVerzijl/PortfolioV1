@@ -1,14 +1,17 @@
 type ButtonProps = {
   text: string;
+  link: string;
 };
 
 const NavButton = (props: ButtonProps) => {
   return (
     <div>
       <div>
-        <button className="text-white font-bold py-2 px-4 rounded p-6 ">
-          {props.text}
-        </button>
+        <a href={props.link}>
+          <button className="text-white font-bold py-2 px-4 rounded p-6 ">
+            {props.text}
+          </button>
+        </a>
       </div>
     </div>
   );

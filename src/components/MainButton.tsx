@@ -2,7 +2,7 @@ interface ButtonProps {
   text: string;
 }
 
-const Mainbutton = (props: ButtonProps) => {
+const MainButton = (props: ButtonProps) => {
   return (
     <div>
       <a
@@ -15,4 +15,4 @@ const Mainbutton = (props: ButtonProps) => {
   );
 };
 
-export default Mainbutton;
+export default MainButton;

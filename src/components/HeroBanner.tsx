@@ -1,6 +1,6 @@
 import Latestsong from "./Latestsong";
 import { motion } from "framer-motion";
-import Mainbutton from "./Mainbutton";
+import MainButton from "./MainButton";
 
 const HeroBanner = () => {
   return (
@@ -15,7 +15,7 @@ const HeroBanner = () => {
         </motion.h1>
         <Latestsong />
         <motion.div className="mt-6">
-          <Mainbutton text="Contact me" />
+          <MainButton text="Contact me" />
         </motion.div>
       </div>
     </div>

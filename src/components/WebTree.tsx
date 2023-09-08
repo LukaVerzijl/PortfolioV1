@@ -16,7 +16,7 @@ const WebTree = () => {
     if (model.current) {
       gsap.set(model.current["position"], {
         x: 400,
-        y: 500,
+        y: 450,
       });
       gsap.set(model.current["scale"], {
         x: 0,

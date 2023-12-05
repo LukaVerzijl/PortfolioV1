@@ -13,7 +13,7 @@
     "@prismicio/client": "^7.2.0",
     "@prismicio/react": "^2.7.1",
     "@splinetool/react-spline": "^2.2.6",
-    "@splinetool/runtime": "^0.9.432",
+    "@splinetool/runtime": "^0.9.518",
     "axios": "^1.6.0",
     "framer-motion": "^10.16.1",
     "gsap": "^3.12.2",

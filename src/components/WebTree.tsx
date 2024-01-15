@@ -40,7 +40,7 @@ const WebTree = () => {
           start: "top top",
           end: "+=400",
           scrub: 1,
-          markers: true,
+          markers: false,
         },
         x: -650,
         y: -300,
@@ -53,7 +53,7 @@ const WebTree = () => {
           start: "top top",
           end: "+=400",
           scrub: 1,
-          markers: true,
+          markers: false,
         },
         y: 101.6,
         duration: 1,
@@ -62,13 +62,6 @@ const WebTree = () => {
   }
 
   return (
-    // <LocomotiveScrollProvider
-    //   options={{
-    //     smooth: true,
-    //   }}
-
-    //   containerRef={containerRef}
-    // >
     <main>
       <div>
         <div className="bg-[#222831] " style={{ height: "100vh" }}>

@@ -1,6 +1,6 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Spline from "@splinetool/react-spline";
-import { gsap } from "gsap";
+import { gsap, CSSPlugin, Expo } from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import Aboutme from "./Aboutme";
 import HeroBanner from "./HeroBanner";
@@ -9,6 +9,18 @@ import Projects from "./Projects";
 const WebTree = () => {
   const model = useRef(null);
   gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(CSSPlugin);
+
+  const [counter, setCounter] = useState(0);
+  useEffect(() => {
+    const count = setInterval(() => {
+      setCounter((counter) =>
+        counter < 100
+          ? counter + 1
+          : (clearInterval(count), setCounter(100), reveal())
+      );
+    }, 25);
+  }, []);
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   function onLoad(spline: { findObjectByName: (arg0: string) => any }) {
@@ -61,39 +73,107 @@ const WebTree = () => {
     }
   }
 
-  return (
-    <main>
-      <div>
-        <div className="bg-[#222831] " style={{ height: "100vh" }}>
-          <Spline
-            scene="https://prod.spline.design/tyETQWHbb8NLplaa/scene.splinecode"
-            onLoad={onLoad}
-            className="absolute top-0 left-0 invisible lg:visible lg:w-[180vh] lg:h-[180vw] sm:w-[100vw] sm:h-[100vh] sm:overflow-hidden"
-          />
+  const reveal = () => {
+    const t1 = gsap.timeline({
+      onComplete: () => {
+        console.log("completed");
+      },
+    });
+    t1.to("#Follow", {
+      width: "100%",
+      ease: Expo.easeInOut,
+      duration: 1.2,
+      delay: 0.7,
+    })
+      .to(".hideafter", { opacity: 0, duration: 0.3 })
+      .to(".hideafter", { display: "none", duration: 0 })
+      .to("#Follow", {
+        height: "100%",
+        ease: Expo.easeInOut,
+        duration: 0.7,
+        delay: 0.2,
+      })
 
-          <div
-            className="w-full flex justify-around flex-row lg:mt-32 sm:mt-10 relative lg:mb-[400px] scroll "
-            id="trigger-1"
-          >
-            <HeroBanner />
-            <div> </div>
-          </div>
-          <div
-            id="trigger-2"
-            className="mt-[350px] lg:mt-[400px] relative mb-[300px]"
-            data-scroll
-          >
-            <Aboutme />
-          </div>
-          <section data-scrollbar>
-            <div className="relative" data-scroll>
-              <Projects />
-            </div>
-          </section>
-        </div>
+      .to("#content", {
+        opacity: 1,
+        ease: Expo.easeInOut,
+        duration: 0,
+      })
+      .to("#trigger-1", {
+        opacity: 1,
+        ease: Expo.easeInOut,
+        duration: 0,
+      })
+      .to("#loader", {
+        height: "0%",
+        ease: Expo.easeInOut,
+        duration: 0.7,
+      })
+      .to("#loader", {
+        opacity: 0,
+        duration: 0,
+      });
+  };
+
+  return (
+    <div
+      id="Cont"
+      className="w-screen h-screen text-[#222831] relative top-0 left-0"
+    >
+      <div
+        id="loader"
+        className="h-full w-full bg-[#222831] flex justify-center items-center absolute top-0 left-0"
+      >
+        <div
+          id="Follow"
+          className="absolute bg-white h-0.5 w-0 z-[2] left-0"
+        ></div>
+        <div
+          id="ProgressBar"
+          className="hideafter absolute bg-white h-0.5 w-0 transition-[0.4s] duration-[ease-out] left-0"
+          style={{ width: counter + "%" }}
+        ></div>
+        <p
+          id="Counter"
+          className="hideafter absolute text-[130px] text-white translate-y-[-15px] font-medium"
+        >
+          {" "}
+          {counter}%
+        </p>
       </div>
-    </main>
-    // </LocomotiveScrollProvider>
+      <main id="content" className=" opacity-0">
+        <div>
+          <div className="bg-[#222831] " style={{ height: "100vh" }}>
+            <Spline
+              scene="https://prod.spline.design/tyETQWHbb8NLplaa/scene.splinecode"
+              onLoad={onLoad}
+              className="absolute top-0 left-0 invisible lg:visible lg:w-[180vh] lg:h-[180vw] sm:w-[100vw] sm:h-[100vh] sm:overflow-hidden"
+            />
+
+            <div
+              className="w-full flex justify-around flex-row lg:mt-32 sm:mt-10 relative lg:mb-[400px] scroll "
+              id="trigger-1"
+            >
+              <HeroBanner />
+              <div> </div>
+            </div>
+            <div
+              id="trigger-2"
+              className="mt-[350px] lg:mt-[400px] relative mb-[300px]"
+              data-scroll
+            >
+              <Aboutme />
+            </div>
+            <section data-scrollbar>
+              <div className="relative" data-scroll>
+                <Projects />
+              </div>
+            </section>
+          </div>
+        </div>
+      </main>
+      //{" "}
+    </div>
   );
 };
 

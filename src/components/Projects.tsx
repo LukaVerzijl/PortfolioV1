@@ -1,6 +1,7 @@
 import { useAllPrismicDocumentsByType } from "@prismicio/react";
 import { motion } from "framer-motion";
 import ProjectCard from "./ProjectCard";
+import Footer from "./Footer";
 const Projects = () => {
   const [ProjectList] = useAllPrismicDocumentsByType("projects");
   return (
@@ -29,6 +30,7 @@ const Projects = () => {
               );
             })}
         </div>
+        <Footer />
       </div>
     </div>
   );

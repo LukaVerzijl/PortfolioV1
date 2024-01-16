@@ -14,10 +14,11 @@ const WebTree = () => {
   const [counter, setCounter] = useState(0);
   useEffect(() => {
     const count = setInterval(() => {
-      setCounter((counter) =>
-        counter < 100
-          ? counter + 1
-          : (clearInterval(count), setCounter(100), reveal())
+      setCounter(
+        (counter) =>
+          counter < 100
+            ? counter + 1
+            : (clearInterval(count), setCounter(100), reveal(), 100) // Add 100 as the return value
       );
     }, 25);
   }, []);
@@ -75,9 +76,7 @@ const WebTree = () => {
 
   const reveal = () => {
     const t1 = gsap.timeline({
-      onComplete: () => {
-        console.log("completed");
-      },
+      onComplete: () => {},
     });
     t1.to("#Follow", {
       width: "100%",

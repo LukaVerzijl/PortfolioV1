@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/all";
 import Aboutme from "./Aboutme";
 import HeroBanner from "./HeroBanner";
 import Projects from "./Projects";
+import { Analytics } from "@vercel/analytics/react";
 
 const WebTree = () => {
   const model = useRef(null);
@@ -172,7 +173,7 @@ const WebTree = () => {
           </div>
         </div>
       </main>
-      //{" "}
+      <Analytics />
     </div>
   );
 };

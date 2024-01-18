@@ -6,7 +6,7 @@ import Aboutme from "./Aboutme";
 import HeroBanner from "./HeroBanner";
 import Projects from "./Projects";
 import { Analytics } from "@vercel/analytics/react";
-
+import { SpeedInsights } from "@vercel/speed-insights/next";
 const WebTree = () => {
   const model = useRef(null);
   gsap.registerPlugin(ScrollTrigger);
@@ -174,6 +174,7 @@ const WebTree = () => {
         </div>
       </main>
       <Analytics />
+      <SpeedInsights />
     </div>
   );
 };

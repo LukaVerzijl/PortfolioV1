@@ -55,7 +55,7 @@ const WebTree = () => {
           scrub: 1,
           markers: false,
         },
-        x: -650,
+        x: -600,
         y: -300,
         duration: 1,
       });
@@ -155,6 +155,7 @@ const WebTree = () => {
             >
               <HeroBanner />
               <div> </div>
+              <div></div>
             </div>
             <div
               id="trigger-2"

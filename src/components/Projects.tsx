@@ -26,6 +26,7 @@ const Projects = () => {
                   image={project.data.image.url}
                   link={project.data.link.url}
                   description={project.data.description[0].text}
+                  uid={project.uid}
                 />
               );
             })}

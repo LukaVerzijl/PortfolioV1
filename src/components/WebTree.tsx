@@ -39,7 +39,6 @@ const WebTree = () => {
         x: 300,
         y: 250,
       });
-      console.log(model.current["position"]);
       gsap.set(model.current["scale"], {
         x: 0,
         y: 0,
@@ -122,7 +121,6 @@ const WebTree = () => {
   };
 
   const blobanimatie1 = () => {
-    console.log("animatie actief1");
     const t1 = gsap.timeline({
       repeat: -1,
     });
@@ -150,7 +148,6 @@ const WebTree = () => {
     });
   };
   const blobanimatie2 = () => {
-    console.log("animatie actief2");
     const t2 = gsap.timeline({
       repeat: -1,
     });
@@ -201,7 +198,7 @@ const WebTree = () => {
           {counter}%
         </p>
       </div>
-      <main id="content" className=" opacity-0">
+      <main id="content" className="page opacity-0">
         <div>
           <div className="bg-[#222831] " style={{ height: "100vh" }}>
             <Spline

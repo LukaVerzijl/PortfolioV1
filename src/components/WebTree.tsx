@@ -14,6 +14,9 @@ const WebTree = () => {
 
   const [counter, setCounter] = useState(0);
   useEffect(() => {
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 0);
     const count = setInterval(() => {
       setCounter(
         (counter) =>

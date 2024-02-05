@@ -3,16 +3,22 @@ interface ProjectCardProps {
   title: string;
   link: string;
   description: string;
+  uid: any;
 }
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 export default function ProjectCard({
   image,
   title,
-  link,
   description,
+  uid,
 }: ProjectCardProps) {
   return (
-    <a href={link}>
+    <Link
+      to={{
+        pathname: `/project/${uid}`,
+      }}
+    >
       <motion.div
         className="relative mb-8  mx-5 rounded-xl bg-cover bg-center h-[55vw] lg:h-[20vw] "
         style={{ backgroundImage: `url(${image})` }}
@@ -29,6 +35,6 @@ export default function ProjectCard({
           </div>
         </div>
       </motion.div>
-    </a>
+    </Link>
   );
 }

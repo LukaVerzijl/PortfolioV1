@@ -10,7 +10,6 @@ import { Link } from "react-router-dom";
 export default function ProjectCard({
   image,
   title,
-  link,
   description,
   uid,
 }: ProjectCardProps) {

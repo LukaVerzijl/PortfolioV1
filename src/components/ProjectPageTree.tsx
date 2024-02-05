@@ -12,6 +12,9 @@ export default function ProjectPageTree() {
     window.location.pathname.split("/").pop() || ""
   );
   useEffect(() => {
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 0);
     // GSAP animations
     gsap.fromTo(
       ".fade-in-text",

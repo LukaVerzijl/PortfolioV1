@@ -4,7 +4,7 @@ import MainButton from "./MainButton";
 
 const HeroBanner = () => {
   return (
-    <div>
+    <div className=" z-50">
       <div>
         <motion.h1
           className="text-8xl text-white font-poppins"

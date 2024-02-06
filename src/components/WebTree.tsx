@@ -7,6 +7,7 @@ import HeroBanner from "./HeroBanner";
 import Projects from "./Projects";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import BlobComponent from "./BlobComponent";
 const WebTree = () => {
   const model = useRef(null);
   gsap.registerPlugin(ScrollTrigger);
@@ -22,12 +23,7 @@ const WebTree = () => {
         (counter) =>
           counter < 100
             ? counter + 1
-            : (clearInterval(count),
-              setCounter(100),
-              reveal(),
-              blobanimatie2(),
-              blobanimatie1(),
-              100) // Add 100 as the return value
+            : (clearInterval(count), setCounter(100), reveal(), 100) // Add 100 as the return value
       );
     }, 25);
   }, []);
@@ -123,58 +119,6 @@ const WebTree = () => {
       });
   };
 
-  const blobanimatie1 = () => {
-    const t1 = gsap.timeline({
-      repeat: -1,
-    });
-
-    t1.to("#blob1", {
-      x: 400,
-      y: 200,
-      duration: 25,
-      ease: Back.easeInOut,
-    });
-
-    t1.to("#blob1", {
-      x: 202,
-      z: -300,
-      duration: 25,
-      ease: Back.easeInOut,
-    });
-
-    t1.to("#blob1", {
-      x: 0,
-      y: 0,
-      z: 0,
-      duration: 25,
-      ease: Back.easeInOut,
-    });
-  };
-  const blobanimatie2 = () => {
-    const t2 = gsap.timeline({
-      repeat: -1,
-    });
-    t2.to("#blob2", {
-      x: -400,
-      y: -100,
-      duration: 25,
-      ease: Back.easeInOut,
-    });
-    t2.to("#blob2", {
-      x: 202,
-      z: -300,
-      duration: 25,
-      ease: Back.easeInOut,
-    });
-    t2.to("#blob2", {
-      x: 0,
-      y: 0,
-      z: 0,
-      duration: 25,
-      ease: Back.easeInOut,
-    });
-  };
-
   return (
     <div
       id="Cont"
@@ -207,7 +151,8 @@ const WebTree = () => {
             <Spline
               scene="https://prod.spline.design/tyETQWHbb8NLplaa/scene.splinecode"
               onLoad={onLoad}
-              className="absolute top-0 left-0 invisible lg:visible lg:w-[180vh] lg:h-[180vw] sm:w-[100vw] sm:h-[100vh] sm:overflow-hidden"
+              style={{ height: "100vh" }}
+              className="absolute z-10 top-0 left-0 invisible lg:visible lg:w-[180vh] lg:h-[350vw] sm:w-[100vw] sm:h-[100vh] sm:overflow-hidden"
             />
 
             <div
@@ -215,14 +160,7 @@ const WebTree = () => {
               id="trigger-1"
             >
               <HeroBanner />
-              <div
-                id="blob1"
-                className="  blur-[200px] w-64 h-64 flex justify-center items-center bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 rounded-full"
-              />
-              <div
-                id="blob2"
-                className="  blur-[200px] w-64 h-64 flex justify-center items-center bg-gradient-to-r from-green-200 via-green-400 to-purple-700 rounded-full"
-              />
+              <BlobComponent />
             </div>
             <div
               id="trigger-2"

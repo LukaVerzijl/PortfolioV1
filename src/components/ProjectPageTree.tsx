@@ -4,6 +4,7 @@ import { IoIosArrowRoundBack } from "react-icons/io";
 import { Link, useLocation } from "react-router-dom";
 import Footer from "./Footer";
 import gsap from "gsap";
+import BlobComponent from "./BlobComponent";
 
 export default function ProjectPageTree() {
   //get with current url as id
@@ -46,6 +47,9 @@ export default function ProjectPageTree() {
       <main>
         <div className="bg-[#222831] page" style={{ height: "100vh" }}>
           <div className="flex flex-wrap justify-center h-[550px] w-full">
+            <div className="absolute mt-6 fade-scale-image ">
+              <BlobComponent />
+            </div>
             <div
               className="text-white w-3/4 h-96 mt-24 rounded-3xl shadow-3xl  bg-cover flex justify-center items-center fade-scale-image"
               style={{ backgroundImage: `url(${project?.data.image.url})` }}

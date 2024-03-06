@@ -14,15 +14,13 @@
     "@prismicio/react": "^2.7.1",
     "@splinetool/react-spline": "^2.2.6",
     "@splinetool/runtime": "^0.9.518",
-    "@vercel/analytics": "^1.1.2",
-    "@vercel/speed-insights": "^1.0.7",
     "axios": "^1.6.0",
-    "framer-motion": "^10.18.0",
+    "framer-motion": "^11.0.8",
     "gsap": "^3.12.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.0.1",
-    "react-router-dom": "^6.22.0"
+    "react-router-dom": "^6.22.2"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.9",
@@ -36,7 +34,7 @@
     "eslint": "^8.45.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
-    "postcss": "^8.4.33",
+    "postcss": "^8.4.35",
     "tailwindcss": "^3.3.3",
     "typescript": "^5.0.2",
     "vite": "^4.5.2"

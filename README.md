@@ -37,6 +37,17 @@ Start the server
 
 To run this project, you will need to add the following environment variables to your .env file
 
+`VITE_PRISMICAPI` your prismic api key
+
+`VITE_LASTFMUSER` your lastfm username
+
+`VITE_LASTFMKEY` your lastfm api key
+
+
+## Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env file
+
 `VITE_LASTFMKEY`
 
 `VITE_LASTFMUSER`

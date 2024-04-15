@@ -10,17 +10,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@prismicio/client": "^7.3.1",
+    "@prismicio/client": "^7.4.1",
     "@prismicio/react": "^2.7.1",
     "@splinetool/react-spline": "^2.2.6",
     "@splinetool/runtime": "^0.9.518",
     "axios": "^1.6.0",
-    "framer-motion": "^11.0.8",
+    "framer-motion": "^11.0.28",
     "gsap": "^3.12.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^5.0.1",
-    "react-router-dom": "^6.22.2"
+    "react-icons": "^5.1.0",
+    "react-router-dom": "^6.22.3"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.9",
@@ -34,9 +34,9 @@
     "eslint": "^8.45.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
-    "postcss": "^8.4.35",
+    "postcss": "^8.4.38",
     "tailwindcss": "^3.3.3",
     "typescript": "^5.0.2",
-    "vite": "^4.5.2"
+    "vite": "^4.5.3"
   }
 }

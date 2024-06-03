@@ -15,7 +15,7 @@
     "@splinetool/react-spline": "^2.2.6",
     "@splinetool/runtime": "^0.9.518",
     "axios": "^1.6.0",
-    "framer-motion": "^11.1.9",
+    "framer-motion": "^11.2.10",
     "gsap": "^3.12.2",
     "react": "^18.2.0",
     "react-dom": "^18.3.1",

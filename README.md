@@ -1,7 +1,7 @@
 
 # Portfolio
 
-Repo of the portfolio site running om https://lukaverzijl.nl
+Production site running on https://lukaverzijl.nl
 
 
 
@@ -43,14 +43,4 @@ To run this project, you will need to add the following environment variables to
 
 `VITE_LASTFMKEY` your lastfm api key
 
-
-## Environment Variables
-
-To run this project, you will need to add the following environment variables to your .env file
-
-`VITE_LASTFMKEY`
-
-`VITE_LASTFMUSER`
-
-`VITE_PRISMICAPI`
 

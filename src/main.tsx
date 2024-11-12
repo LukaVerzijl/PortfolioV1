@@ -13,5 +13,5 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <App />
       </PrismicProvider>
     </BrowserRouter>
-  </React.StrictMode>
+  </React.StrictMode>,
 );

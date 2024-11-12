@@ -11,7 +11,7 @@ function Latestsong() {
     // Make a request to the Last.fm API
     axios
       .get(
-        `https://ws.audioscrobbler.com/2.0/?method=user.getRecentTracks&user=${LASTFM_USERNAME}&api_key=${LASTFM_API_KEY}&format=json`
+        `https://ws.audioscrobbler.com/2.0/?method=user.getRecentTracks&user=${LASTFM_USERNAME}&api_key=${LASTFM_API_KEY}&format=json`,
       )
       .then((response) => {
         const recentTracks = response.data.recenttracks.track;

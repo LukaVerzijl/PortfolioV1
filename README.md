@@ -1,10 +1,6 @@
-
 # Portfolio
 
 Production site running on https://lukaverzijl.nl
-
-
-
 
 ## Run Locally
 
@@ -32,7 +28,6 @@ Start the server
   npm run dev
 ```
 
-
 ## Environment Variables
 
 To run this project, you will need to add the following environment variables to your .env file
@@ -42,5 +37,3 @@ To run this project, you will need to add the following environment variables to
 `VITE_LASTFMUSER` your lastfm username
 
 `VITE_LASTFMKEY` your lastfm api key
-
-

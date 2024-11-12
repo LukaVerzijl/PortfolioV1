@@ -10,7 +10,7 @@ export default function ProjectPageTree() {
   //get with current url as id
   const [project] = usePrismicDocumentByUID(
     "projects",
-    window.location.pathname.split("/").pop() || ""
+    window.location.pathname.split("/").pop() || "",
   );
   useEffect(() => {
     setTimeout(() => {
@@ -22,14 +22,14 @@ export default function ProjectPageTree() {
       {
         opacity: 0,
       },
-      { opacity: 1, duration: 1, delay: 1.5, stagger: 0.2 }
+      { opacity: 1, duration: 1, delay: 1.5, stagger: 0.2 },
     );
     gsap.fromTo(
       ".fade-in-button",
       {
         opacity: 0,
       },
-      { opacity: 1, duration: 1, delay: 2.5, stagger: 0.2 }
+      { opacity: 1, duration: 1, delay: 2.5, stagger: 0.2 },
     );
 
     gsap.fromTo(
@@ -39,7 +39,7 @@ export default function ProjectPageTree() {
         scale: 0,
         duration: 1,
       },
-      { opacity: 1, scale: 1, duration: 2.5, delay: 0.5, ease: "power4.out" }
+      { opacity: 1, scale: 1, duration: 2.5, delay: 0.5, ease: "power4.out" },
     );
   }, []);
   return (

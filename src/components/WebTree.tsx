@@ -26,7 +26,7 @@ const WebTree = () => {
           (counter) =>
             counter < 100
               ? counter + 1
-              : (clearInterval(count), setCounter(100), reveal(), 25) // Add 100 as the return value
+              : (clearInterval(count), setCounter(100), reveal(), 25), // Add 100 as the return value
         );
       }, 25);
     }, []);

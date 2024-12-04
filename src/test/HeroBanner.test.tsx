@@ -38,7 +38,7 @@ describe("HeroBanner Component", () => {
       "bg-clip-text",
       "bg-gradient-to-r",
       "from-violet-600",
-      "to-indigo-600"
+      "to-indigo-600",
     );
   });
 });

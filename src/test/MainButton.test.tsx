@@ -28,7 +28,7 @@ describe("MainButton Component", () => {
       "inline-flex",
       "items-center",
       "justify-center",
-      "text-gray-200"
+      "text-gray-200",
     );
   });
 

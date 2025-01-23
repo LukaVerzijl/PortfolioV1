@@ -143,7 +143,7 @@ const WebTree = () => {
         >
           <div
             id="Follow"
-            className="absolute bg-white h-0.5 w-0 z-[2] left-0"
+            className="absolute bg-white h-0.5 w-0 z-2 left-0"
           ></div>
           <div
             id="ProgressBar"

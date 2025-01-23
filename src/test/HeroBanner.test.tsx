@@ -36,7 +36,7 @@ describe("HeroBanner Component", () => {
     expect(nameText).toHaveClass(
       "text-transparent",
       "bg-clip-text",
-      "bg-gradient-to-r",
+      "bg-linear-to-r",
       "from-violet-600",
       "to-indigo-600",
     );

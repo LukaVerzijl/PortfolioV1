@@ -8,7 +8,7 @@ const NavButton = (props: ButtonProps) => {
     <div>
       <div>
         <a href={props.link}>
-          <button className="text-white font-bold py-2 px-4 rounded p-6 ">
+          <button className="text-white font-bold py-2 px-4 rounded-sm p-6 ">
             {props.text}
           </button>
         </a>

@@ -22,7 +22,7 @@ const HeroBanner = () => {
         >
           I am{" "}
           <motion.span
-            className=" text-transparent text-8xl bg-clip-text bg-gradient-to-r from-violet-600 to-indigo-600"
+            className=" text-transparent text-8xl bg-clip-text bg-linear-to-r from-violet-600 to-indigo-600"
             transition={{ duration: 1.3, ease: "easeOut", delay: 0.5 }}
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}

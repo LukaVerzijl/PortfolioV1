@@ -27,7 +27,7 @@ describe("App Component Tests", () => {
       const { container } = render(
         <MemoryRouter initialEntries={["/"]}>
           <App />
-        </MemoryRouter>
+        </MemoryRouter>,
       );
       expect(container.innerHTML).toContain("WebTree Component");
     });
@@ -36,7 +36,7 @@ describe("App Component Tests", () => {
       const { container } = render(
         <MemoryRouter initialEntries={["/project/test-project"]}>
           <App />
-        </MemoryRouter>
+        </MemoryRouter>,
       );
       expect(container.innerHTML).toContain("ProjectPageTree Component");
     });
@@ -46,7 +46,7 @@ describe("App Component Tests", () => {
       const { container } = render(
         <MemoryRouter initialEntries={["/invalid-route"]}>
           <App />
-        </MemoryRouter>
+        </MemoryRouter>,
       );
       expect(container.innerHTML).not.toContain("WebTree Component");
       expect(container.innerHTML).not.toContain("ProjectPageTree Component");
@@ -56,7 +56,7 @@ describe("App Component Tests", () => {
       const { container, rerender } = render(
         <MemoryRouter initialEntries={["/"]}>
           <App />
-        </MemoryRouter>
+        </MemoryRouter>,
       );
       expect(container.innerHTML).toContain("WebTree Component");
     });
@@ -66,7 +66,7 @@ describe("App Component Tests", () => {
       const { container } = render(
         <MemoryRouter initialEntries={[`/project/${specialProjectName}`]}>
           <App />
-        </MemoryRouter>
+        </MemoryRouter>,
       );
       expect(container.innerHTML).toContain("ProjectPageTree Component");
     });
@@ -77,7 +77,7 @@ describe("App Component Tests", () => {
       const { container } = render(
         <MemoryRouter initialEntries={["/"]}>
           <App />
-        </MemoryRouter>
+        </MemoryRouter>,
       );
       expect(container.innerHTML).toContain("WebTree Component");
     });
@@ -86,7 +86,7 @@ describe("App Component Tests", () => {
       const { container } = render(
         <MemoryRouter initialEntries={["/project/projectwalibi"]}>
           <App />
-        </MemoryRouter>
+        </MemoryRouter>,
       );
       expect(container.innerHTML).toContain("ProjectPageTree Component");
     });

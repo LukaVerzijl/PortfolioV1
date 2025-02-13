@@ -1,7 +1,12 @@
-import { PrismicRichText, useSinglePrismicDocument } from "@prismicio/react";
+import { PrismicRichText } from "@prismicio/react";
 import BlobComponent from "./BlobComponent";
+import { client } from "../prismic";
+import { useQuery } from "@tanstack/react-query";
 const Aboutme = () => {
-  const [AboutMe] = useSinglePrismicDocument("aboutme2");
+  const { data } = useQuery({
+    queryKey: ["AboutMe"],
+    queryFn: () => client.getSingle("aboutme2"),
+  });
 
   return (
     <div
@@ -12,7 +17,7 @@ const Aboutme = () => {
       <div className="flex flex-col text-white lg:mr-[150px] ">
         <h1 className="text-5xl text-white font-poppins">About me </h1> {"\n"}
         <div className="font-poppins text-m">
-          <PrismicRichText field={AboutMe?.data.text} />
+          <PrismicRichText field={data?.data.text} />
         </div>
       </div>
     </div>

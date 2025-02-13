@@ -1,17 +1,22 @@
-import { usePrismicDocumentByUID } from "@prismicio/react";
 import React, { useEffect } from "react";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import { Link, useLocation } from "react-router-dom";
 import Footer from "./Footer";
 import gsap from "gsap";
 import BlobComponent from "./BlobComponent";
+import { client } from "../prismic";
+import { useQuery } from "@tanstack/react-query";
 
 export default function ProjectPageTree() {
   //get with current url as id
-  const [project] = usePrismicDocumentByUID(
-    "projects",
-    window.location.pathname.split("/").pop() || "",
-  );
+  const { data } = useQuery({
+    queryKey: ["project"],
+    queryFn: () =>
+      client.getByUID(
+        "projects",
+        window.location.pathname.split("/").pop() || "",
+      ),
+  });
   useEffect(() => {
     setTimeout(() => {
       window.scrollTo(0, 0);
@@ -52,10 +57,10 @@ export default function ProjectPageTree() {
             </div>
             <div
               className="text-white w-3/4 h-96 mt-24 rounded-3xl shadow-3xl  bg-cover flex justify-center items-center fade-scale-image"
-              style={{ backgroundImage: `url(${project?.data.image.url})` }}
+              style={{ backgroundImage: `url(${data?.data.image.url})` }}
             >
               <h1 className="text-center font-bold text-6xl pl-12 fade-in-text">
-                {project?.data.title[0].text}
+                {data?.data.title[0].text}
               </h1>
             </div>
           </div>
@@ -73,7 +78,7 @@ export default function ProjectPageTree() {
                   About the project:
                 </h1>
                 <div className="mt-5  mb-14">
-                  {project?.data.detailedinfo.map((info) => {
+                  {data?.data.detailedinfo.map((info) => {
                     return (
                       <p className="text-white font-poppins text-md">
                         {info.text}
@@ -89,7 +94,7 @@ export default function ProjectPageTree() {
                 <div className="mt-5 ">
                   {/* map as list */}
                   <table>
-                    {project?.data.technologies.map((tech) => {
+                    {data?.data.technologies.map((tech) => {
                       return (
                         <li
                           className="text-white font-poppins text-md"
@@ -104,7 +109,7 @@ export default function ProjectPageTree() {
               </div>
               {/* link naar project */}
               <div className="md:w-1/3 w-full">
-                <a href={project?.data.link.url}>
+                <a href={data?.data.link.url}>
                   <button className="text-white font-bold py-4 px-6 rounded-3xl p-6 outline fade-in-button">
                     Visit Project
                   </button>

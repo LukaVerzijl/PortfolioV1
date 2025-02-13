@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import ProjectCard from "./ProjectCard";
 import Footer from "./Footer";
 import { client } from "../prismic";
-import { useQueries, useQuery } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 const Projects = () => {
   const { data } = useQuery({
     queryKey: ["ProjectList"],
@@ -25,7 +25,7 @@ const Projects = () => {
             data?.map((project, index) => {
               return (
                 <ProjectCard
-                  key={index}
+                  key={project.id}
                   title={project.data.title[0].text}
                   image={project.data.image.url}
                   link={project.data.link.url}

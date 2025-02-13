@@ -5,7 +5,7 @@
       "name": "portfolio",
       "dependencies": {
         "@prismicio/client": "^7.15.1",
-        "@prismicio/react": "^2.9.1",
+        "@prismicio/react": "^3",
         "@splinetool/react-spline": "^4.0.0",
         "@splinetool/runtime": "^1.9.59",
         "@tailwindcss/vite": "^4.0.0",
@@ -195,11 +195,7 @@
 
     "@prismicio/client": ["@prismicio/client@7.15.1", "", { "dependencies": { "imgix-url-builder": "^0.0.5" } }, "sha512-GjOMRxoXm4zux9NolcCQJITwhj5nsWZz+bewO7zA2g1wdAM8rgAPlr0T0+bC/CcXnhznBF/gdfpGOXiHsjJ1WQ=="],
 
-    "@prismicio/react": ["@prismicio/react@2.9.1", "", { "dependencies": { "@prismicio/richtext": "^2.1.5" }, "peerDependencies": { "@prismicio/client": "^6 || ^7", "react": "^18 || ^19.0.0-rc.0" } }, "sha512-ea0tRi74Xt3Qg3cXDNtB3OlKnHXas4vh0zjiHXjho17wJ7sqExCXEOMypNi3phMlqVv2VGL5ual4A/fF+4M0MQ=="],
-
-    "@prismicio/richtext": ["@prismicio/richtext@2.1.5", "", { "dependencies": { "@prismicio/types": "^0.2.7" } }, "sha512-Sf6iCsciPmfK3uQeFmeY9RTRSuhrCVzyU39OkiJ1VJn8O0531pKapGoWS+5WGxouJtE5+jGqV8L+L2mKP7NkXQ=="],
-
-    "@prismicio/types": ["@prismicio/types@0.2.9", "", {}, "sha512-1uhHnZTiGeCi+rmO507B8jtnUTCNetdgrC5sfZEw9zsCplfgBELt0+BN1RFsXWLbZbyvR9xzHcrJ87Ykqa8JZA=="],
+    "@prismicio/react": ["@prismicio/react@3.0.0", "", { "dependencies": { "esm-env": "^1.2.2" }, "peerDependencies": { "@prismicio/client": "^7", "react": "^18 || ^19" } }, "sha512-LJht0hijpfkVp/lXiX+pmU2ffoHWrwvhkoMe/Da6vwe9n37erwTtn0027Kz4eODfCGfoJ+1qgILyPb76+OgeKg=="],
 
     "@rollup/rollup-android-arm-eabi": ["@rollup/rollup-android-arm-eabi@4.31.0", "", { "os": "android", "cpu": "arm" }, "sha512-9NrR4033uCbUBRgvLcBrJofa2KY9DzxL2UKZ1/4xA/mnTNyhZCWBuD8X3tPm1n4KxcgaraOYgrFKSgwjASfmlA=="],
 
@@ -448,6 +444,8 @@
     "eslint-scope": ["eslint-scope@8.2.0", "", { "dependencies": { "esrecurse": "^4.3.0", "estraverse": "^5.2.0" } }, "sha512-PHlWUfG6lvPc3yvP5A4PNyBL1W8fkDUccmI21JUu/+GKZBoH/W5u6usENXUrWFRsyoW5ACUjFGgAFQp5gUlb/A=="],
 
     "eslint-visitor-keys": ["eslint-visitor-keys@4.2.0", "", {}, "sha512-UyLnSehNt62FFhSwjZlHmeokpRK59rcz29j+F1/aDgbkbRTk7wIc9XzdoasMUbRNKDM0qQt/+BJ4BrpFeABemw=="],
+
+    "esm-env": ["esm-env@1.2.2", "", {}, "sha512-Epxrv+Nr/CaL4ZcFGPJIYLWFom+YeV1DqMLHJoEd9SYRxNbaFruBwfEX/kkHUJf55j2+TUbmDcmuilbP1TmXHA=="],
 
     "espree": ["espree@10.3.0", "", { "dependencies": { "acorn": "^8.14.0", "acorn-jsx": "^5.3.2", "eslint-visitor-keys": "^4.2.0" } }, "sha512-0QYC8b24HWY8zjRnDTL6RiHfDbAWn63qb4LMj1Z4b076A4une81+z03Kg7l7mn/48PUTqoLptSXez8oknU8Clg=="],
 

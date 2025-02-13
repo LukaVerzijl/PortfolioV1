@@ -1,7 +1,8 @@
-import { PrismicRichText, useSinglePrismicDocument } from "@prismicio/react";
+import { PrismicRichText } from "@prismicio/react";
 import BlobComponent from "./BlobComponent";
-const Aboutme = () => {
-  const [AboutMe] = useSinglePrismicDocument("aboutme2");
+import { client } from "../prismic";
+const Aboutme = async () => {
+  const AboutMe = await client.getSingle("aboutme2");
 
   return (
     <div

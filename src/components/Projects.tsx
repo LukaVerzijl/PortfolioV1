@@ -1,9 +1,9 @@
-import { useAllPrismicDocumentsByType } from "@prismicio/react";
 import { motion } from "framer-motion";
 import ProjectCard from "./ProjectCard";
 import Footer from "./Footer";
-const Projects = () => {
-  const [ProjectList] = useAllPrismicDocumentsByType("projects");
+import { client } from "../prismic";
+const Projects = async () => {
+  const ProjectList = await client.getAllByType("projects");
   return (
     <div className="h-[300px] text-white relative">
       <div>

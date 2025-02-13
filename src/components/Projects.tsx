@@ -22,7 +22,7 @@ const Projects = () => {
 
         <div className=" mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-1">
           {data &&
-            data?.map((project, index) => {
+            data?.map((project) => {
               return (
                 <ProjectCard
                   key={project.id}
